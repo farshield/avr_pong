@@ -1,0 +1,19 @@
+Pong game for Atmel Atmega16 AVR microcontroller. Using a 8x8 LED matrix, 
+monochrome red. Simple pushbuttons for user control. Also implemented a
+scoreboard using 7seg displays. A buzzer was also added for producing
+annoying sound using PWM. It's a simple PC speaker. =)
+
+The circuit schematic can be found here also. 'schematic_image.png'
+
+There were two methods of displaying on the LED matrix, using interrupts
+or normal refresh. Not knowing which one to chose, both of these methods
+are implemented:
+
+'src/backbone/pong_refresh.c'
+'src/backbone/pong_parallel.c'
+
+These two files contain only the basic functions for user interface, not
+the game itself. The file 'src/pong_final.c' is the game implementation
+using 'pong_refresh.c' as the backbone.
+
+Also added Proteus Isis file 'proteus/avr_matrix.DSN' for simulation. =)
